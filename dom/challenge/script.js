@@ -54,17 +54,37 @@ main.append(newArticle);
 /**
  * Add a navigation section to the DOM
  */
+
+// navContent
 const navContent = `
       <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
       <li><a href="#">Backpacks</a></li>
-      <li><a href="#">Other things</a></li>
+      <li><a href="#">Other Things</a></li>
       <li><a href="#">Contact</a></li>
 `;
+// creating nav element
 const mainNav = document.createElement("nav")
-mainNav.classList.add("main-navigation");
+// add class name
+mainNav.classList.add("main-navigation")
+// create ul element
 const navList = document.createElement("ul")
+// adding navContent to navList
 navList.innerHTML = navContent
+// adding navList to the mainNav
 mainNav.append(navList)
-
+// Adding mainNav to the site header
 document.querySelector(".siteheader").append(mainNav)
+
+// Translate code to html language
+/**
+<header class="siteheader">
+  <nav class="main-navigation">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Backpacks</a></li>
+      <li><a href="#">Other Things</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+*/
