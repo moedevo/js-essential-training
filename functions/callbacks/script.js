@@ -1,23 +1,21 @@
-const formatter = (locale = "en-US", currency = "USD", value) => {
-    let formattedValue = new Intl.NumberFormat(locale, {
-      style: "currency",
-      currency: currency,
-    }).format(value);
-    return formattedValue;
-  };
+const button = document.querySelector('button');
 
-const tipCalculator = (sum, percentage, locale, currency, printHTML) => {
-  let tip = sum * (percentage / 100);
-  let total = sum + tip;
+function toggle() {
+  button.classList.toggle('altColor')
+}
+// without () toggle is callback function
+button.addEventListener('click', toggle)
 
-  const finalTip = {
-    sum: formatter(locale, currency, sum),
-    percentage: percentage + "%",
-    tip: formatter(locale, currency, tip),
-    total: formatter(locale, currency, total),
-  };
+//---------------------------------------------//
 
-  printHTML(finalTip);
-};
+function firstAction() {
+  console.log("Im the first function")
+  
+}
 
-tipCalculator(29.95, 18, "de-DE", "EUR", printHTML);
+function secondAction() {
+  console.log("Im the second function")
+  
+}
+setTimeout(firstAction, 5000)
+secondAction()
